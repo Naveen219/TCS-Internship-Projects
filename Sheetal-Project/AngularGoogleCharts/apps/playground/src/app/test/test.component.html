@@ -1,0 +1,17 @@
+<h1>Test Component</h1>
+<button (click)="goBack()">Back</button>
+
+<div class="inline" *ngIf="formatters$ | async as formatter">
+  
+  <chart-wrapper [specs]="chartWrapperSpecs"></chart-wrapper>
+
+  <div>
+   
+
+    <chart-editor></chart-editor>
+    
+  </div>
+</div>
+
+
+

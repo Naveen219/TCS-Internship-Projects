@@ -1,0 +1,52 @@
+{
+  "name": "angular-google-charts",
+  "description": "A wrapper for the Google Charts library written in Angular",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve playground -o",
+    "build": "ng build angular-google-charts --prod",
+    "test": "ng test angular-google-charts",
+    "lint": "ng lint playground",
+    "release": "standard-version",
+    "postinstall": "ngcc es2015 browser module main --first-only --create-ivy-entry-points"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "tslint --fix",
+    "*.{json,html,ts,js,scss,css,yml,md}": "prettier --write"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results"
+  },
+  "standard-version": {
+    "bumpFiles": "libs/angular-google-charts/package.json",
+    "packageFiles": "libs/angular-google-charts/package.json"
+  },
+  "engines": {
+    "npm": ">=7.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^12.0.4",
+    "@angular/compiler-cli": "^12.0.4",
+    "@angular/language-service": "^12.0.4",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "angular-google-charts": "file:libs/angular-google-charts"
+  }
+}

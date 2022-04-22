@@ -1,0 +1,25 @@
+<h1 style="font-family: Arial, Helvetica, sans-serif">Angular Google-Charts Demo</h1>
+<div *ngFor="let chart of charts">
+  <google-chart
+    width="600"
+    [title]="chart.title"
+    [type]="chart.type"
+    [data]="chart.data"
+    [columns]="chart.columns"
+    [options]="chart.options"
+    (ready)="onReady()"
+    (select)="onSelect($event)"
+    (error)="onError($event)"
+    (mouseenter)="onMouseEnter($event)"
+    (mouseleave)="onMouseLeave($event)"
+  >
+  </google-chart>
+</div>
+
+<div class="container">
+  <div class="chart">
+      <google-chart></google-chart>
+      <div class="marquee">
+        <div>A million reasons to love web development!</div>
+      </div>
+  
